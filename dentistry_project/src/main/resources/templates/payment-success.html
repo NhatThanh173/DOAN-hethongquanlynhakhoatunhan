@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thanh toán thành công</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: Arial, sans-serif;
+      color: #0f172a;
+    "
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      style="padding: 24px 12px"
+    >
+      <tr>
+        <td align="center">
+          <table
+            role="presentation"
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+              max-width: 620px;
+              background: #ffffff;
+              border: 1px solid #e2e8f0;
+              border-radius: 14px;
+              overflow: hidden;
+            "
+          >
+            <tr>
+              <td
+                style="
+                  padding: 22px 24px;
+                  background: linear-gradient(135deg, #14b8a6 0%, #0284c7 100%);
+                  color: #ffffff;
+                "
+              >
+                <h1 style="margin: 0; font-size: 22px">
+                  Xác nhận thanh toán thành công
+                </h1>
+                <p style="margin: 8px 0 0; font-size: 14px; opacity: 0.95">
+                  Nha Khoa Việt Smile
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 22px 24px">
+                <p style="margin: 0 0 12px">
+                  Xin chào <b th:text="${patientName}">Khách hàng</b>,
+                </p>
+                <p style="margin: 0 0 16px; line-height: 1.6">
+                  Hệ thống đã ghi nhận giao dịch thanh toán của bạn.
+                </p>
+
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="border-collapse: collapse; margin: 0 0 16px"
+                >
+                  <tr>
+                    <td style="padding: 8px 0; color: #64748b; width: 42%">
+                      Mã hóa đơn
+                    </td>
+                    <td style="padding: 8px 0">
+                      <b th:text="${invoiceCode}">HD001</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #64748b">
+                      Số tiền đã thanh toán
+                    </td>
+                    <td style="padding: 8px 0">
+                      <b th:text="${amount}">0</b> VND
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #64748b">
+                      Thời gian giao dịch
+                    </td>
+                    <td style="padding: 8px 0">
+                      <b th:text="${paidAt}">--</b>
+                    </td>
+                  </tr>
+                </table>
+
+                <p style="margin: 0; line-height: 1.6">
+                  Cảm ơn bạn đã tin tưởng sử dụng dịch vụ của phòng khám.
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

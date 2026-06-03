@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thông báo hủy lịch khám</title>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background: #f8fafc;
+      font-family: Arial, sans-serif;
+      color: #0f172a;
+    "
+  >
+    <table
+      role="presentation"
+      width="100%"
+      cellpadding="0"
+      cellspacing="0"
+      style="padding: 24px 12px"
+    >
+      <tr>
+        <td align="center">
+          <table
+            role="presentation"
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            style="
+              max-width: 620px;
+              background: #ffffff;
+              border: 1px solid #e2e8f0;
+              border-radius: 14px;
+              overflow: hidden;
+            "
+          >
+            <tr>
+              <td
+                style="
+                  padding: 22px 24px;
+                  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+                  color: #ffffff;
+                "
+              >
+                <h1 style="margin: 0; font-size: 22px">
+                  Thông báo hủy lịch khám
+                </h1>
+                <p style="margin: 8px 0 0; font-size: 14px; opacity: 0.95">
+                  Nha Khoa Việt Smile
+                </p>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 22px 24px">
+                <p style="margin: 0 0 12px">
+                  Xin chào <b th:text="${patientName}">Bệnh nhân</b>,
+                </p>
+                <p style="margin: 0 0 16px; line-height: 1.6">
+                  Hệ thống đã ghi nhận yêu cầu hủy lịch khám của bạn.
+                </p>
+
+                <table
+                  role="presentation"
+                  width="100%"
+                  cellpadding="0"
+                  cellspacing="0"
+                  style="border-collapse: collapse; margin: 0 0 16px"
+                >
+                  <tr>
+                    <td style="padding: 8px 0; color: #64748b; width: 42%">
+                      Mã lịch hẹn
+                    </td>
+                    <td style="padding: 8px 0">
+                      <b th:text="${appointmentCode}">APP001</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #64748b">Ngày khám</td>
+                    <td style="padding: 8px 0">
+                      <b th:text="${workDate}">--</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #64748b">Ca khám</td>
+                    <td style="padding: 8px 0"><b th:text="${shift}">--</b></td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #64748b">Phạm vi hủy</td>
+                    <td style="padding: 8px 0">
+                      <b th:text="${cancelScope}">Lịch khám này</b>
+                    </td>
+                  </tr>
+                </table>
+
+                <p style="margin: 0 0 8px; color: #475569">Lý do hủy:</p>
+                <p
+                  style="
+                    margin: 0;
+                    line-height: 1.6;
+                    background: #fef2f2;
+                    border: 1px solid #fecaca;
+                    border-radius: 10px;
+                    padding: 10px 12px;
+                  "
+                  th:text="${reason}"
+                >
+                  Không có lý do cụ thể
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
